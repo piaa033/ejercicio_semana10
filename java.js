@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('https://dragonball-api.com/api/characters')
+    for(i=1; i<=6; i++){
+        fetch('https://dragonball-api.com/api/characters?page='+i)
         .then(response => {
             if (response.ok) {
                 return response.json(); // Convierte la respuesta en JSON solo si fue exitosa
@@ -37,5 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                 `;
             }
-            info.innerHTML = adiciones})})
+            info.innerHTML += adiciones})
+    }
+})
 
